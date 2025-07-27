@@ -18,7 +18,7 @@
       padding: 50px 15px;
     }
 
-    h1 {
+    h2 {
       font-size: 2em;
       margin-bottom: 10px;
       color: #222;
@@ -64,7 +64,7 @@
     }
 
     @media (min-width: 768px) {
-      h1 {
+      h2 {
         font-size: 3em;
       }
 
@@ -85,7 +85,7 @@
 </head>
 <body>
   <div class="container">
-    <h2>🌟 All the Best for Your New Journey Kailashh!🌟</h2>
+    <h2>🌟 All the Best for Your New Journey Kailashh! 🌟</h2>
 
     <p class="motivation">
       Naya job, naye log, naye mauke – sab kuch naya hai!<br><br>
@@ -97,6 +97,12 @@
     <button onclick="showFunnyQuote()">Click for Ek Hasna-Wala Quote 😆</button>
 
     <div class="funny-quote" id="quote">“Office ka AC thanda ho sakta hai, lekin tumhara talent garam hi rahega!” 🔥</div>
+
+    <!-- 👇 New Button to Play Audio -->
+    <button onclick="playAudio()">Aur haan... 🎵</button>
+
+    <!-- 👇 Hidden audio element -->
+    <audio id="myAudio" src="kailash-message.mp3"></audio>
   </div>
 
   <script>
@@ -113,6 +119,11 @@
       const quoteEl = document.getElementById('quote');
       const randomIndex = Math.floor(Math.random() * quotes.length);
       quoteEl.innerText = quotes[randomIndex];
+    }
+
+    function playAudio() {
+      const audio = document.getElementById('myAudio');
+      audio.play();
     }
   </script>
 </body>
