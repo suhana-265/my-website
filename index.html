@@ -1,189 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Do You Like Me?</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Arial', sans-serif;
-            color: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            flex-direction: column;
-            text-align: center;
-            background: linear-gradient(45deg, #ff9a9e, #fad0c4, #fbc2eb, #a6c1ee, #d4a5a5);
-            background-size: 400% 400%;
-            animation: backgroundAnimation 6s ease infinite;
-            position: relative;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>All the Best!</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to right, #ffecd2, #fcb69f);
+      font-family: 'Segoe UI', sans-serif;
+      color: #333;
+      text-align: center;
+    }
 
-        /* Crazy and cute background animation */
-        @keyframes backgroundAnimation {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
+    .container {
+      padding: 80px 20px;
+    }
 
-        /* Animated floating hearts */
-        .heart {
-            position: absolute;
-            top: 10%; /* Position hearts near the top of the screen */
-            left: 50%;
-            font-size: 3rem;
-            animation: heartAnimation 5s infinite ease-in-out;
-            transform-origin: center;
-            color: #ff6f61;
-        }
+    h1 {
+      font-size: 3em;
+      margin-bottom: 10px;
+      color: #222;
+      animation: fadeIn 2s;
+    }
 
-        @keyframes heartAnimation {
-            0% {
-                transform: translate(-50%, -50%) scale(0.5);
-                opacity: 0;
-            }
-            50% {
-                transform: translate(-50%, -60%) scale(1.2);
-                opacity: 1;
-            }
-            100% {
-                transform: translate(-50%, -50%) scale(0.5);
-                opacity: 0;
-            }
-        }
+    .motivation {
+      font-size: 1.5em;
+      margin: 30px auto;
+      max-width: 700px;
+      animation: fadeIn 3s;
+      line-height: 1.6;
+    }
 
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            color: white;
-        }
+    button {
+      margin-top: 30px;
+      padding: 15px 25px;
+      font-size: 1.1em;
+      background-color: #333;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
 
-        .buttons {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-        }
+    button:hover {
+      background-color: #555;
+    }
 
-        .btn {
-            padding: 15px 25px;
-            font-size: 1.2rem;
-            background-color: #ff6347;
-            color: white;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
+    .funny-quote {
+      margin-top: 30px;
+      font-style: italic;
+      font-size: 1.2em;
+      color: #444;
+      animation: fadeIn 1s;
+    }
 
-        .btn:hover {
-            background-color: #ff4500;
-        }
-
-        .message {
-            margin-top: 20px;
-            font-size: 1.5rem;
-            color: #fffa;
-            animation: textAnimation 1s ease;
-        }
-
-        /* Text animation */
-        @keyframes textAnimation {
-            0% { opacity: 0; transform: scale(0.5); }
-            100% { opacity: 1; transform: scale(1); }
-        }
-
-        .image {
-            margin-top: 20px;
-            display: none;
-            width: 200px;
-            height: 200px;
-            border-radius: 15px;
-            transition: opacity 1s ease;
-        }
-
-        .show-image {
-            display: block;
-        }
-
-        /* Crazy Button animation */
-        .btn:active {
-            transform: scale(0.95);
-            transition: 0.2s;
-        }
-
-        .crazy-text {
-            font-size: 1.8rem;
-            color: #fffa;
-        }
-
-    </style>
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
 </head>
 <body>
+  <div class="container">
+    <h1>🌟 All the Best for Your New Journey! 🌟</h1>
 
-    <!-- Animated hearts floating around -->
-    <div class="heart" style="animation-delay: 0s;">❤️</div>
-    <div class="heart" style="animation-delay: 2s;">❤️</div>
-    <div class="heart" style="animation-delay: 4s;">❤️</div>
+    <p class="motivation">
+      Naya job, naye log, naye mauke – sab kuch naya hai!<br><br>
+      Khud par bharosa rakho, tum already ek champion ho!<br>
+      Har challenge ko ek naye chance ki tarah lo.<br>
+      Aur haan, kabhi kabhi thoda chill bhi karna – tum robot nahi ho! 😄
+    </p>
 
-    <h1>Do you like me?</h1>
+    <button onclick="showFunnyQuote()">Click for Ek Hasna-Wala Quote 😆</button>
 
-    <div class="buttons">
-        <button class="btn" id="yesBtn">Yes</button>
-        <button class="btn" id="noBtn">No</button>
-    </div>
+    <div class="funny-quote" id="quote">“Office ka AC thanda ho sakta hai, lekin tumhara talent garam hi rahega!” 🔥</div>
+  </div>
 
-    <div class="message" id="message"></div>
-    <img src="https://i.pinimg.com/originals/4d/9b/80/4d9b80366398053b04cbe240ef210e57.jpg" alt="Cute Cat" id="catImage" class="image">
-    <div id="crazyText"></div>
+  <script>
+    const quotes = [
+      "“Office ka AC thanda ho sakta hai, lekin tumhara talent garam hi rahega!” 🔥",
+      "“First day pe nervous mat hona – woh boss bhi kabhi naya tha!” 😎",
+      "“Naya laptop, nayi ID card, par tum wahi purane dhamakedar insaan ho!” 💥",
+      "“Boss ka kehna hamesha suno – aur fir apna dimaag lagao!” 🧠",
+      "“Lunch box bhool jaoge toh chalega, confidence nahi!” 🍱💪",
+      "“Jitne meeting invites aayenge, utna chill bhi zaroori hai!” 📅😂"
+    ];
 
-    <script>
-        const yesBtn = document.getElementById('yesBtn');
-        const noBtn = document.getElementById('noBtn');
-        const messageDiv = document.getElementById('message');
-        const catImage = document.getElementById('catImage');
-        const crazyTextDiv = document.getElementById('crazyText');
-
-        let noClickCount = 0;
-        const baseFontSize = 1.5; // Initial font size
-
-        yesBtn.addEventListener('click', () => {
-            messageDiv.textContent = "ab mai itni bhi kuch khaas nahi";
-            catImage.classList.add('show-image');
-            crazyTextDiv.innerHTML = ""; // Clear any previous text
-        });
-
-        noBtn.addEventListener('click', () => {
-            // Define the sequence of texts
-            const messages = [
-                "Chal jhoote!",
-                "Haan bolde bhai",
-                "Kitna dheeth hai :(",
-                "Just tell YESS"
-            ];
-
-            // Increase the font size with each click
-            const fontSize = baseFontSize + (noClickCount * 0.5); // Increase by 0.5rem with each click
-
-            // Display the current message with increased font size
-            messageDiv.textContent = messages[noClickCount];
-            messageDiv.style.fontSize = `${fontSize}rem`;
-
-            // Increment the click count
-            noClickCount++;
-
-            // If we reach the last message, reset the counter
-            if (noClickCount >= messages.length) {
-                noClickCount = 0;
-            }
-
-            // Add crazy text that shows each time the "No" button is clicked
-            const crazyMessages = ["", "", "", ""];
-            crazyTextDiv.textContent = crazyMessages[Math.floor(Math.random() * crazyMessages.length)];
-        });
-    </script>
-
+    function showFunnyQuote() {
+      const quoteEl = document.getElementById('quote');
+      const randomIndex = Math.floor(Math.random() * quotes.length);
+      quoteEl.innerText = quotes[randomIndex];
+    }
+  </script>
 </body>
 </html>
